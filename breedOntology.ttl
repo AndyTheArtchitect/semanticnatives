@@ -1,0 +1,276 @@
+# baseURI: http://localhost:3030/breed
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <http://localhost:3030/breed#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://localhost:3030/breed>
+  a owl:Ontology ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+:agreeable
+  a :trainability ;
+  rdfs:comment "" ;
+.
+:allergies
+  a :health_condition ;
+.
+:borzoi
+  a :breed_category ;
+  rdfs:comment "" ;
+  rdfs:label "borzoi" ;
+  skos:broader :russian_borzoi ;
+.
+:boxer
+  a :breed ;
+  :has_increased_probability_of :displasia ;
+  :has_tag :energetic ;
+  :has_tag :independent ;
+  :has_tag :may_be_stubborn ;
+  rdfs:comment "" ;
+.
+:breed
+  a owl:Class ;
+  rdfs:comment "The dog breed as recognized by the Americal Kennel Club (https://www.akc.org/dog-breeds/)" ;
+  rdfs:label "Dog Breed" ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf skos:Concept ;
+.
+:breed_category
+  a owl:Class ;
+  rdfs:comment "Represents the categorization of breeds based on similar phenotype and ancestry" ;
+  rdfs:label "Breed Category" ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf skos:Concept ;
+.
+:breed_group
+  a owl:Class ;
+  rdfs:comment "Represents the grouping of breeds by use" ;
+  rdfs:label "Breed Group" ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:subClassOf skos:Concept ;
+.
+:breeder
+  a :owner_experience_level ;
+.
+:bulldog
+  a :breed_category ;
+  rdfs:comment "" ;
+  skos:broader :french_bulldog ;
+.
+:calm
+  a :personality ;
+  rdfs:comment "" ;
+.
+:cancers
+  a :health_condition ;
+.
+:chihuahua
+  a :breed ;
+  rdfs:comment "" ;
+.
+:cocker_spaniel
+  a :breed ;
+  rdfs:comment "" ;
+.
+:companion
+  a :breed_group ;
+  rdfs:comment "" ;
+  skos:broader :bulldog ;
+  skos:broader :mastiff ;
+.
+:deafness
+  a :health_condition ;
+.
+:displasia
+  a :health_condition ;
+.
+:eager_to_please
+  a :trainability ;
+  rdfs:comment "" ;
+.
+:easy_training
+  a :trainability ;
+  rdfs:comment "" ;
+.
+:energetic
+  a :personality ;
+  rdfs:comment "" ;
+.
+:experienced
+  a :owner_experience_level ;
+.
+:eye_infections
+  a :health_condition ;
+.
+:fashon
+  a :breed_group ;
+  rdfs:comment "" ;
+  skos:broader :pekignese ;
+.
+:french_bulldog
+  a :breed ;
+  rdfs:comment "" ;
+.
+:german_shepherd
+  a :breed ;
+  :has_tag :easy_training ;
+  :has_tag :energetic ;
+  :has_tag :smart ;
+  rdfs:comment "" ;
+.
+:golden_retriever
+  a :breed ;
+  rdfs:comment "" ;
+.
+:has_increased_probability_of
+  a owl:ObjectProperty ;
+  rdfs:comment "Links the breed to the health conditions it has higher probability of having" ;
+  rdfs:domain :breed ;
+  rdfs:label "Has Increased Probability of Health Condition" ;
+  rdfs:range :health_condition ;
+.
+:has_tag
+  a owl:ObjectProperty ;
+  rdfs:comment "Links the breed to its tags" ;
+  rdfs:domain :breed ;
+  rdfs:label "Breed Has Tag" ;
+  rdfs:range :tag ;
+.
+:health_condition
+  a owl:Class ;
+  rdfs:comment "Health conditions that the breed is the most at risk for" ;
+  rdfs:label "Health Condition" ;
+  rdfs:subClassOf owl:Thing ;
+.
+:herding
+  a :breed_group ;
+  rdfs:comment "" ;
+  skos:broader :shepherd ;
+.
+:hunting
+  a :breed_group ;
+  rdfs:comment "" ;
+  skos:broader :spaniel ;
+.
+:independent
+  a :trainability ;
+  rdfs:comment "" ;
+.
+:large
+  a :size ;
+.
+:mastiff
+  a :breed_category ;
+  rdfs:comment "" ;
+  skos:broader :boxer ;
+.
+:may_be_stubborn
+  a :trainability ;
+  rdfs:comment "" ;
+.
+:medium
+  a :size ;
+.
+:owner_experience_level
+  a owl:Class ;
+  rdfs:comment "The tag that allows the potential owner to select the breed based on their experience in owning dogs" ;
+  rdfs:label "Owner Experience Level" ;
+  rdfs:subClassOf :tag ;
+.
+:pekignese
+  a :breed_category ;
+  rdfs:comment "" ;
+  skos:broader :pekignese_breed ;
+.
+:pekignese_breed
+  a :breed ;
+  rdfs:comment "" ;
+.
+:personality
+  a owl:Class ;
+  rdfs:comment "Personality of the dog. This tag supports the selection of the dog breed based on its main personality traits" ;
+  rdfs:label "Personality" ;
+  rdfs:subClassOf :tag ;
+.
+:pocket
+  a :size ;
+.
+:respiratory_issues
+  a :health_condition ;
+.
+:retriever
+  a :breed_category ;
+  rdfs:comment "" ;
+  skos:broader :golden_retriever ;
+.
+:russian_borzoi
+  a :breed ;
+  rdfs:comment "" ;
+.
+:shepherd
+  a :breed_category ;
+  rdfs:comment "" ;
+  skos:broader :german_shepherd ;
+.
+:size
+  a owl:Class ;
+  rdfs:comment "Typical size of the breed" ;
+  rdfs:label "Size" ;
+  rdfs:subClassOf owl:Thing ;
+.
+:skin_conditions
+  a :health_condition ;
+.
+:small
+  a :size ;
+.
+:smart
+  a :personality ;
+  rdfs:comment "" ;
+.
+:some_experience
+  a :owner_experience_level ;
+  rdfs:comment "" ;
+.
+:spaniel
+  a :breed_category ;
+  rdfs:comment "" ;
+  skos:broader :cocker_spaniel ;
+.
+:sporting
+  a :breed_group ;
+  rdfs:comment "" ;
+  skos:broader :borzoi ;
+.
+:tag
+  a owl:Class ;
+  rdfs:comment "Descriptor that can be associated with the dog breed" ;
+  rdfs:label "Tag" ;
+  rdfs:subClassOf owl:Thing ;
+.
+:territorial
+  a :personality ;
+  rdfs:comment "" ;
+.
+:trainability
+  a owl:Class ;
+  rdfs:comment "Trainability tag that supports the selection of the dog breed based on its abilities to learn" ;
+  rdfs:label "Trainability" ;
+  rdfs:subClassOf :tag ;
+.
+:unexperienced
+  a :owner_experience_level ;
+  rdfs:comment "" ;
+.
+:working
+  a :breed_group ;
+  rdfs:comment "" ;
+  skos:broader :retriever ;
+  skos:broader :shepherd ;
+.
