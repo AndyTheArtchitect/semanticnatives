@@ -65,6 +65,7 @@
 .
 :calm
   a :personality ;
+  :tag_label "Calm" ;
   rdfs:comment "" ;
 .
 :cancers
@@ -115,6 +116,11 @@
 .
 :french_bulldog
   a :breed ;
+  :has_increased_probability_of :deafness ;
+  :has_increased_probability_of :respiratory_issues ;
+  :has_increased_probability_of :skin_conditions ;
+  :has_tag :calm ;
+  :has_tag :easy_training ;
   rdfs:comment "" ;
 .
 :german_shepherd
@@ -170,12 +176,37 @@
   rdfs:comment "" ;
   skos:broader :boxer ;
 .
+:max_size_female
+  a owl:DatatypeProperty ;
+  rdfs:comment "Maximum size of the females of the breed" ;
+  rdfs:domain :size ;
+  rdfs:label "Maximum Size of the Female" ;
+  rdfs:range xsd:integer ;
+.
+:max_size_male
+  a owl:DatatypeProperty ;
+  rdfs:comment "Maximum size of the males of the breed" ;
+  rdfs:domain :size ;
+  rdfs:label "Maximum Size of the Male" ;
+  rdfs:range xsd:integer ;
+.
 :may_be_stubborn
   a :trainability ;
   rdfs:comment "" ;
 .
-:medium
-  a :size ;
+:min_size_female
+  a owl:DatatypeProperty ;
+  rdfs:comment "Minimum size of the males of the breed" ;
+  rdfs:domain :size ;
+  rdfs:label "Minimum Size of the Female" ;
+  rdfs:range xsd:integer ;
+.
+:min_size_male
+  a owl:DatatypeProperty ;
+  rdfs:comment "Minimum size of the males of the breed" ;
+  rdfs:domain :size ;
+  rdfs:label "Minimum Size of the Male" ;
+  rdfs:range xsd:integer ;
 .
 :owner_experience_level
   a owl:Class ;
@@ -224,6 +255,20 @@
   rdfs:label "Size" ;
   rdfs:subClassOf owl:Thing ;
 .
+:size_description
+  a owl:DatatypeProperty ;
+  rdfs:comment "Human-readable description of the size category" ;
+  rdfs:domain :size ;
+  rdfs:label "Size Description" ;
+  rdfs:range xsd:string ;
+.
+:size_label
+  a owl:DatatypeProperty ;
+  rdfs:comment "Human-readable label of the size category" ;
+  rdfs:domain :size ;
+  rdfs:label "Size Label" ;
+  rdfs:range xsd:string ;
+.
 :skin_conditions
   a :health_condition ;
 .
@@ -237,6 +282,15 @@
 :some_experience
   a :owner_experience_level ;
   rdfs:comment "" ;
+.
+:somerandomstring
+  a :size ;
+  :max_size_female 63 ;
+  :max_size_male 65 ;
+  :min_size_female 45 ;
+  :min_size_male 50 ;
+  :size_description "Medium size; from 45-63 cm for a female and 50-65cm for a male of the breed" ;
+  :size_label "Medium" ;
 .
 :spaniel
   a :breed_category ;
@@ -253,6 +307,13 @@
   rdfs:comment "Descriptor that can be associated with the dog breed" ;
   rdfs:label "Tag" ;
   rdfs:subClassOf owl:Thing ;
+.
+:tag_label
+  a owl:DatatypeProperty ;
+  rdfs:comment "Human-readable label of the tag" ;
+  rdfs:domain :tag ;
+  rdfs:label "Tag Label" ;
+  rdfs:range xsd:string ;
 .
 :territorial
   a :personality ;
