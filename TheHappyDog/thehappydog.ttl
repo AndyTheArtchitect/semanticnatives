@@ -1,0 +1,510 @@
+# baseURI: http://example.org/thehappydog
+# imports: http://www.w3.org/2004/02/skos/core
+
+@prefix : <http://example.org/thehappydog#> .
+@prefix ast: <http://example.org/thehappydog/ast#> .
+@prefix geo: <http://example.org/thehappydog/geo#> .
+@prefix le: <http://example.org/thehappydog/le#> .
+@prefix loc: <http://example.org/thehappydog/loc#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/thehappydog>
+  a owl:Ontology ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+:Almere
+  a :city ;
+  geo:locatedIn :Netherlands ;
+  geo:name "Almere" ;
+  rdfs:label "Almere" ;
+  skos:prefLabel "Almere" ;
+.
+:Amstel
+  a loc:warehouse ;
+  loc:located_on :amstelstraat1 ;
+  loc:name "Amstel" ;
+  rdfs:label "Amstel" ;
+  skos:prefLabel "Amstel" ;
+.
+:Amstelplein
+  a :street ;
+  geo:locatedIn :Amsterdam ;
+  geo:name "Amstelplein" ;
+  rdfs:label "Amstelplein" ;
+  skos:prefLabel "Amstelplein" ;
+.
+:Amstelstraat
+  a :street ;
+  geo:locatedIn :Amsterdam ;
+  geo:name "amstelstraat" ;
+  rdfs:label "Amstelstraat" ;
+  skos:prefLabel "Amstelstraat" ;
+.
+:Amsterdam
+  a :city ;
+  geo:locatedIn :Netherlands ;
+  geo:name "amsterdam" ;
+  rdfs:label "Amsterdam" ;
+  skos:prefLabel "Amsterdam" ;
+.
+:DogFoodsInc
+  a le:legal_entity ;
+  le:has_contact_address :goudseweg12 ;
+  le:has_delivery_address :vondelingsweg15 ;
+  le:has_party_type :wholesaler ;
+  le:name "DogFoods Inc" ;
+  le:rents :Europoort ;
+  le:rents :Purina_Amsterdam ;
+  rdfs:label "Dog foods inc" ;
+  skos:prefLabel "Dog foods inc" ;
+.
+:Europoort
+  a loc:warehouse ;
+  loc:located_on :vondelingsweg13 ;
+  loc:name "Europoort" ;
+  rdfs:label "Europoort" ;
+  skos:prefLabel "Europoort" ;
+.
+:FluffyCloud
+  a le:legal_entity ;
+  le:has_contact_address :amstelplein1 ;
+  le:has_delivery_address :amstelstraat15 ;
+  le:has_party_type :breeder ;
+  le:name "FluffyCloud" ;
+  rdfs:label "Fluffy cloud" ;
+  skos:prefLabel "Fluffy cloud" ;
+.
+:Gouda
+  a :city ;
+  geo:locatedIn :Netherlands ;
+  geo:name "Gouda" ;
+  rdfs:label "Gouda" ;
+  skos:prefLabel "Gouda" ;
+.
+:Goudseweg
+  a :street ;
+  geo:locatedIn :Gouda ;
+  geo:name "goudseweg" ;
+  rdfs:label "Goudseweg" ;
+  skos:prefLabel "Goudseweg" ;
+.
+:Hondlaan
+  a :street ;
+  geo:locatedIn :Almere ;
+  geo:name "Hondlaan" ;
+  rdfs:label "Hondlaan" ;
+  skos:prefLabel "Hondlaan" ;
+.
+:Koningsweg
+  a :street ;
+  geo:locatedIn :Woerden ;
+  geo:name "Koningsweg" ;
+  rdfs:label "Koningsweg" ;
+  skos:prefLabel "Koningsweg" ;
+.
+:NaturalKey
+  a owl:Class ;
+  rdfs:comment "Points to the predicate used to identify the class in the real world" ;
+  rdfs:label "Natural Key" ;
+.
+:NaturalKey_1
+  a :NaturalKey ;
+  :domainKeyPredicate loc:located_on ;
+.
+:NaturalKey_2
+  a :NaturalKey ;
+  :domainKeyPredicate geo:building_id ;
+  :domainKeyPredicate geo:postal_code ;
+  rdfs:label "Natural key 2" ;
+  skos:prefLabel "Natural key 2" ;
+.
+:NaturalKey_3
+  a :NaturalKey ;
+  :domainKeyPredicate geo:name ;
+.
+:NaturalKey_4
+  a :NaturalKey ;
+  :domainKeyPredicate le:name ;
+.
+:NaturalKey_5
+  a :NaturalKey ;
+  :domainKeyPredicate le:type_label ;
+.
+:Netherlands
+  a :country ;
+  geo:name "the_netherlands" ;
+  rdfs:label "Netherlands" ;
+  skos:prefLabel "Netherlands" ;
+.
+:Purina
+  a le:legal_entity ;
+  le:has_contact_address :wilhelminalaan13 ;
+  le:has_delivery_address :amstelstraat15 ;
+  le:has_party_type :producer ;
+  le:has_party_type :wholesaler ;
+  le:name "Purina" ;
+  le:owns :Amstel ;
+  rdfs:label "Purina" ;
+  skos:prefLabel "Purina" ;
+.
+:Purina_Amsterdam
+  a loc:warehouse ;
+  loc:located_on :amstelstraat1 ;
+  loc:name "Purina_Amsterdam" ;
+  rdfs:label "Purina Amsterdam" ;
+  skos:prefLabel "Purina Amsterdam" ;
+.
+:Rotterdam
+  a :city ;
+  geo:locatedIn :Netherlands ;
+  geo:name "rotterdam" ;
+  rdfs:label "Rotterdam" ;
+  skos:prefLabel "Rotterdam" ;
+.
+:SetterGetter
+  a le:legal_entity ;
+  le:has_contact_address :koningsweg44 ;
+  le:has_delivery_address :hondlaan14 ;
+  le:has_party_type :breeder ;
+  le:name "SetterGetter" ;
+  rdfs:label "Setter getter" ;
+  skos:prefLabel "Setter getter" ;
+.
+:Vondelingsweg
+  a :street ;
+  geo:locatedIn :Rotterdam ;
+  geo:name "vondelingsweg" ;
+  rdfs:label "Vondelingsweg" ;
+  skos:prefLabel "Vondelingsweg" ;
+.
+:Wilhelminalaan
+  a :street ;
+  geo:locatedIn :Rotterdam ;
+  geo:name "wilhelminalaan" ;
+  rdfs:label "Wilhelminalaan" ;
+  skos:prefLabel "Wilhelminalaan" ;
+.
+:Woerden
+  a :city ;
+  geo:locatedIn :Netherlands ;
+  geo:name "Woerden" ;
+  rdfs:label "Woerden" ;
+  skos:prefLabel "Woerden" ;
+.
+:amstelplein1
+  a geo:address ;
+  geo:building_id "1" ;
+  geo:locatedIn_street :Amstelplein ;
+  geo:postal_code "1232AK" ;
+  rdfs:label "amstelplein1" ;
+  skos:prefLabel "amstelplein1" ;
+.
+:amstelstraat1
+  a geo:address ;
+  geo:building_id "1" ;
+  geo:has_allowed_truck_type :massive ;
+  geo:has_allowed_truck_type :regular ;
+  geo:locatedIn_street :Amstelstraat ;
+  geo:postal_code "1111AA" ;
+  rdfs:label "amstelstraat1" ;
+  skos:prefLabel "amstelstraat1" ;
+.
+:amstelstraat15
+  a geo:address ;
+  geo:building_id "15" ;
+  geo:locatedIn_street :Amstelstraat ;
+  geo:postal_code "1111AA" ;
+  rdfs:label "amstelstraat15" ;
+  skos:prefLabel "amstelstraat15" ;
+.
+:breeder
+  a le:party_type ;
+  le:type_comment "A legal entity; to which we deliver the product on behalf of our partners." ;
+  le:type_label "breeder" ;
+  rdfs:label "breeder" ;
+  skos:prefLabel "breeder" ;
+.
+:city
+  a owl:Class ;
+  rdfs:label "city" ;
+  rdfs:subClassOf geo:geospatial_feature ;
+  skos:prefLabel "city" ;
+.
+:country
+  a owl:Class ;
+  rdfs:label "country" ;
+  rdfs:subClassOf geo:geospatial_feature ;
+  skos:prefLabel "country" ;
+.
+:domainKeyPredicate
+  a owl:ObjectProperty ;
+  rdfs:comment "Links the key to the predicate in which the value of the key is stored. This predicate has the entity being identified as its domain" ;
+  rdfs:domain :NaturalKey ;
+  rdfs:label "Domain Key Predicate" ;
+  rdfs:range rdf:Property ;
+.
+:goudseweg12
+  a geo:address ;
+  geo:building_id "12" ;
+  geo:locatedIn_street :Goudseweg ;
+  geo:postal_code "3243AA" ;
+  rdfs:label "goudseweg12" ;
+  skos:prefLabel "goudseweg12" ;
+.
+:hasNaturalKey
+  a owl:ObjectProperty ;
+  rdfs:comment "Links the class to its natural keys" ;
+  rdfs:domain owl:Class ;
+  rdfs:label "Has Natural Key" ;
+  rdfs:range :NaturalKey ;
+.
+:hondlaan14
+  a geo:address ;
+  geo:building_id "14" ;
+  geo:locatedIn_street :Hondlaan ;
+  geo:postal_code "2232PP" ;
+  rdfs:label "hondlaan14" ;
+  skos:prefLabel "hondlaan14" ;
+.
+:koningsweg44
+  a geo:address ;
+  geo:building_id "44" ;
+  geo:locatedIn_street :Koningsweg ;
+  geo:postal_code "3456CC" ;
+  rdfs:label "koningsweg44" ;
+  skos:prefLabel "koningsweg44" ;
+.
+:massive
+  a ast:truck_type ;
+  ast:type_name "regular" ;
+  rdfs:label "massive" ;
+  skos:prefLabel "massive" ;
+.
+:producer
+  a le:party_type ;
+  le:type_comment "A legal entity that produces dog food; our clients that use our services to deliver their product to the end user. Only trade their own brand." ;
+  le:type_label "producer" ;
+  rdfs:label "producer" ;
+  skos:prefLabel "producer" ;
+.
+:rangeKeyPredicate
+  a owl:ObjectProperty ;
+  rdfs:comment "Links the key to the predicate in which the value of the key is stored. This predicate has the entity being identified as its range" ;
+  rdfs:domain :NaturalKey ;
+  rdfs:label "Range Key Predicate" ;
+  rdfs:range rdf:Property ;
+.
+:regular
+  a ast:truck_type ;
+  ast:type_name "regular" ;
+  rdfs:label "regular" ;
+  skos:prefLabel "regular" ;
+.
+:street
+  a owl:Class ;
+  rdfs:label "street" ;
+  rdfs:subClassOf geo:geospatial_feature ;
+  skos:prefLabel "street" ;
+.
+:vondelingsweg13
+  a geo:address ;
+  geo:building_id "13" ;
+  geo:has_allowed_truck_type :massive ;
+  geo:has_allowed_truck_type :regular ;
+  geo:locatedIn_street :Vondelingsweg ;
+  geo:postal_code "1234AB" ;
+  rdfs:label "vondelingsweg13" ;
+  skos:prefLabel "vondelingsweg13" ;
+.
+:vondelingsweg15
+  a geo:address ;
+  geo:building_id "15" ;
+  geo:locatedIn_street :Vondelingsweg ;
+  geo:postal_code "1234AB" ;
+  rdfs:label "vondelingsweg15" ;
+  skos:prefLabel "vondelingsweg15" ;
+.
+:wholesaler
+  a le:party_type ;
+  le:type_comment "A legal entity; our clients that use our services to deliver their product to the end user. Sell multiple brands." ;
+  le:type_label "wholesaler" ;
+  rdfs:label "wholesaler" ;
+  skos:prefLabel "wholesaler" ;
+.
+:wilhelminalaan13
+  a geo:address ;
+  geo:building_id "13" ;
+  geo:locatedIn_street :Wilhelminalaan ;
+  geo:postal_code "4444BB" ;
+  rdfs:label "wilhelminalaan13" ;
+  skos:prefLabel "wilhelminalaan13" ;
+.
+ast:truck_type
+  a owl:Class ;
+  rdfs:label "truck type" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "truck type" ;
+.
+ast:type_name
+  a owl:DatatypeProperty ;
+  rdfs:domain ast:truck_type ;
+  rdfs:label "type name" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "type name" ;
+.
+geo:address
+  a owl:Class ;
+  :hasNaturalKey :NaturalKey_2 ;
+  rdfs:label "The point on the map" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "Address" ;
+.
+geo:building_id
+  a owl:DatatypeProperty ;
+  a owl:FunctionalProperty ;
+  rdfs:domain geo:address ;
+  rdfs:label "building id" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "building id" ;
+.
+geo:geospatial_feature
+  a owl:Class ;
+  :hasNaturalKey :NaturalKey_3 ;
+  rdfs:label "A polygon on the map" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "geospatial feature" ;
+.
+geo:has_allowed_truck_type
+  a owl:ObjectProperty ;
+  rdfs:domain geo:address ;
+  rdfs:label "has allowed truck type" ;
+  rdfs:range ast:truck_type ;
+  skos:prefLabel "has allowed truck type" ;
+.
+geo:locatedIn
+  a owl:ObjectProperty ;
+  rdfs:domain geo:geospatial_feature ;
+  rdfs:label "located in" ;
+  rdfs:range geo:geospatial_feature ;
+  skos:prefLabel "located in" ;
+.
+geo:locatedIn_street
+  a owl:ObjectProperty ;
+  rdfs:domain geo:address ;
+  rdfs:label "located in street" ;
+  rdfs:range :street ;
+  skos:prefLabel "located in street" ;
+.
+geo:name
+  a owl:DatatypeProperty ;
+  rdfs:domain geo:geospatial_feature ;
+  rdfs:label "name of the geospatial feature" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "name" ;
+.
+geo:postal_code
+  a owl:DatatypeProperty ;
+  a owl:FunctionalProperty ;
+  rdfs:domain geo:address ;
+  rdfs:label "postal code" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "postal code" ;
+.
+le:has_contact_address
+  a owl:ObjectProperty ;
+  rdfs:domain le:legal_entity ;
+  rdfs:label "has_contact_address" ;
+  rdfs:range geo:address ;
+  skos:prefLabel "has_contact_address" ;
+.
+le:has_delivery_address
+  a owl:ObjectProperty ;
+  rdfs:domain le:legal_entity ;
+  rdfs:label "has_delivery_address" ;
+  rdfs:range geo:address ;
+  skos:prefLabel "has_delivery_address" ;
+.
+le:has_party_type
+  a owl:ObjectProperty ;
+  rdfs:domain le:legal_entity ;
+  rdfs:label "has party type" ;
+  rdfs:range le:party_type ;
+  skos:prefLabel "has party type" ;
+.
+le:legal_entity
+  a owl:Class ;
+  :hasNaturalKey :NaturalKey_4 ;
+  rdfs:label "an entity registered in chamber of commerce" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "legal entity" ;
+.
+le:name
+  a owl:DatatypeProperty ;
+  a owl:FunctionalProperty ;
+  rdfs:domain le:legal_entity ;
+  rdfs:label "name" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "name" ;
+.
+le:owns
+  a owl:ObjectProperty ;
+  rdfs:domain le:legal_entity ;
+  rdfs:label "owns" ;
+  rdfs:range loc:warehouse ;
+  skos:prefLabel "owns" ;
+.
+le:party_type
+  a owl:Class ;
+  :hasNaturalKey :NaturalKey_5 ;
+  rdfs:label "the role the party plays in the supply chain" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "party type" ;
+.
+le:rents
+  a owl:ObjectProperty ;
+  rdfs:domain le:legal_entity ;
+  rdfs:label "rents" ;
+  rdfs:range loc:warehouse ;
+  skos:prefLabel "rents" ;
+.
+le:type_comment
+  a owl:DatatypeProperty ;
+  rdfs:domain le:party_type ;
+  rdfs:label "type comment" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "type comment" ;
+.
+le:type_label
+  a owl:DatatypeProperty ;
+  rdfs:domain le:party_type ;
+  rdfs:label "type label" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "type label" ;
+.
+loc:located_on
+  a owl:FunctionalProperty ;
+  a owl:ObjectProperty ;
+  rdfs:domain loc:warehouse ;
+  rdfs:label "the address the warehouse is located on" ;
+  rdfs:range geo:address ;
+  skos:prefLabel "located on" ;
+.
+loc:name
+  a owl:DatatypeProperty ;
+  rdfs:domain loc:warehouse ;
+  rdfs:label "name of the location" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "name" ;
+.
+loc:warehouse
+  a owl:Class ;
+  :hasNaturalKey :NaturalKey_1 ;
+  rdfs:label "Location where we pick up the product" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "Warehouse" ;
+.
