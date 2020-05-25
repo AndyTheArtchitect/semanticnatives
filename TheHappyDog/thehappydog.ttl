@@ -1,510 +1,560 @@
-# baseURI: http://example.org/thehappydog
+# baseURI: http://thehappydog.io/
 # imports: http://www.w3.org/2004/02/skos/core
 
-@prefix : <http://example.org/thehappydog#> .
-@prefix ast: <http://example.org/thehappydog/ast#> .
-@prefix geo: <http://example.org/thehappydog/geo#> .
-@prefix le: <http://example.org/thehappydog/le#> .
-@prefix loc: <http://example.org/thehappydog/loc#> .
+@prefix : <http://thehappydog.io/#> .
+@prefix ast: <http://thehappydog.io/#ast/> .
+@prefix geo: <http://thehappydog.io/#geo/> .
+@prefix le: <http://thehappydog.io/#le/> .
+@prefix loc: <http://thehappydog.io/#loc/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix own: <http://thehappydog.io/#own/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://example.org/thehappydog>
-  a owl:Ontology ;
+<http://example.org/thehappydog/le#type_comment>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain <http://thehappydog.io/#le/party_type> ;
+  rdfs:label "type comment" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "type comment" ;
+.
+<http://example.org/thehappydog/le#type_label>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain <http://thehappydog.io/#le/party_type> ;
+  rdfs:label "type label" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "type label" ;
+.
+<http://thehappydog.io/>
+  rdf:type owl:Ontology ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
-:Almere
-  a :city ;
-  geo:locatedIn :Netherlands ;
-  geo:name "Almere" ;
-  rdfs:label "Almere" ;
-  skos:prefLabel "Almere" ;
-.
-:Amstel
-  a loc:warehouse ;
-  loc:located_on :amstelstraat1 ;
-  loc:name "Amstel" ;
-  rdfs:label "Amstel" ;
-  skos:prefLabel "Amstel" ;
-.
-:Amstelplein
-  a :street ;
-  geo:locatedIn :Amsterdam ;
-  geo:name "Amstelplein" ;
-  rdfs:label "Amstelplein" ;
-  skos:prefLabel "Amstelplein" ;
-.
-:Amstelstraat
-  a :street ;
-  geo:locatedIn :Amsterdam ;
-  geo:name "amstelstraat" ;
-  rdfs:label "Amstelstraat" ;
-  skos:prefLabel "Amstelstraat" ;
-.
-:Amsterdam
-  a :city ;
-  geo:locatedIn :Netherlands ;
-  geo:name "amsterdam" ;
-  rdfs:label "Amsterdam" ;
-  skos:prefLabel "Amsterdam" ;
-.
-:DogFoodsInc
-  a le:legal_entity ;
-  le:has_contact_address :goudseweg12 ;
-  le:has_delivery_address :vondelingsweg15 ;
-  le:has_party_type :wholesaler ;
-  le:name "DogFoods Inc" ;
-  le:rents :Europoort ;
-  le:rents :Purina_Amsterdam ;
-  rdfs:label "Dog foods inc" ;
-  skos:prefLabel "Dog foods inc" ;
-.
-:Europoort
-  a loc:warehouse ;
-  loc:located_on :vondelingsweg13 ;
-  loc:name "Europoort" ;
-  rdfs:label "Europoort" ;
-  skos:prefLabel "Europoort" ;
-.
-:FluffyCloud
-  a le:legal_entity ;
-  le:has_contact_address :amstelplein1 ;
-  le:has_delivery_address :amstelstraat15 ;
-  le:has_party_type :breeder ;
-  le:name "FluffyCloud" ;
-  rdfs:label "Fluffy cloud" ;
-  skos:prefLabel "Fluffy cloud" ;
-.
-:Gouda
-  a :city ;
-  geo:locatedIn :Netherlands ;
-  geo:name "Gouda" ;
-  rdfs:label "Gouda" ;
-  skos:prefLabel "Gouda" ;
-.
-:Goudseweg
-  a :street ;
-  geo:locatedIn :Gouda ;
-  geo:name "goudseweg" ;
-  rdfs:label "Goudseweg" ;
-  skos:prefLabel "Goudseweg" ;
-.
-:Hondlaan
-  a :street ;
-  geo:locatedIn :Almere ;
-  geo:name "Hondlaan" ;
-  rdfs:label "Hondlaan" ;
-  skos:prefLabel "Hondlaan" ;
-.
-:Koningsweg
-  a :street ;
-  geo:locatedIn :Woerden ;
-  geo:name "Koningsweg" ;
-  rdfs:label "Koningsweg" ;
-  skos:prefLabel "Koningsweg" ;
-.
 :NaturalKey
-  a owl:Class ;
+  rdf:type owl:Class ;
   rdfs:comment "Points to the predicate used to identify the class in the real world" ;
   rdfs:label "Natural Key" ;
 .
-:NaturalKey_1
-  a :NaturalKey ;
-  :domainKeyPredicate loc:located_on ;
+<http://thehappydog.io/#ast/truck_type>
+  rdf:type owl:Class ;
+  rdfs:label "truck type" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "truck type" ;
 .
-:NaturalKey_2
-  a :NaturalKey ;
-  :domainKeyPredicate geo:building_id ;
-  :domainKeyPredicate geo:postal_code ;
-  rdfs:label "Natural key 2" ;
-  skos:prefLabel "Natural key 2" ;
-.
-:NaturalKey_3
-  a :NaturalKey ;
-  :domainKeyPredicate geo:name ;
-.
-:NaturalKey_4
-  a :NaturalKey ;
-  :domainKeyPredicate le:name ;
-.
-:NaturalKey_5
-  a :NaturalKey ;
-  :domainKeyPredicate le:type_label ;
-.
-:Netherlands
-  a :country ;
-  geo:name "the_netherlands" ;
-  rdfs:label "Netherlands" ;
-  skos:prefLabel "Netherlands" ;
-.
-:Purina
-  a le:legal_entity ;
-  le:has_contact_address :wilhelminalaan13 ;
-  le:has_delivery_address :amstelstraat15 ;
-  le:has_party_type :producer ;
-  le:has_party_type :wholesaler ;
-  le:name "Purina" ;
-  le:owns :Amstel ;
-  rdfs:label "Purina" ;
-  skos:prefLabel "Purina" ;
-.
-:Purina_Amsterdam
-  a loc:warehouse ;
-  loc:located_on :amstelstraat1 ;
-  loc:name "Purina_Amsterdam" ;
-  rdfs:label "Purina Amsterdam" ;
-  skos:prefLabel "Purina Amsterdam" ;
-.
-:Rotterdam
-  a :city ;
-  geo:locatedIn :Netherlands ;
-  geo:name "rotterdam" ;
-  rdfs:label "Rotterdam" ;
-  skos:prefLabel "Rotterdam" ;
-.
-:SetterGetter
-  a le:legal_entity ;
-  le:has_contact_address :koningsweg44 ;
-  le:has_delivery_address :hondlaan14 ;
-  le:has_party_type :breeder ;
-  le:name "SetterGetter" ;
-  rdfs:label "Setter getter" ;
-  skos:prefLabel "Setter getter" ;
-.
-:Vondelingsweg
-  a :street ;
-  geo:locatedIn :Rotterdam ;
-  geo:name "vondelingsweg" ;
-  rdfs:label "Vondelingsweg" ;
-  skos:prefLabel "Vondelingsweg" ;
-.
-:Wilhelminalaan
-  a :street ;
-  geo:locatedIn :Rotterdam ;
-  geo:name "wilhelminalaan" ;
-  rdfs:label "Wilhelminalaan" ;
-  skos:prefLabel "Wilhelminalaan" ;
-.
-:Woerden
-  a :city ;
-  geo:locatedIn :Netherlands ;
-  geo:name "Woerden" ;
-  rdfs:label "Woerden" ;
-  skos:prefLabel "Woerden" ;
-.
-:amstelplein1
-  a geo:address ;
-  geo:building_id "1" ;
-  geo:locatedIn_street :Amstelplein ;
-  geo:postal_code "1232AK" ;
-  rdfs:label "amstelplein1" ;
-  skos:prefLabel "amstelplein1" ;
-.
-:amstelstraat1
-  a geo:address ;
-  geo:building_id "1" ;
-  geo:has_allowed_truck_type :massive ;
-  geo:has_allowed_truck_type :regular ;
-  geo:locatedIn_street :Amstelstraat ;
-  geo:postal_code "1111AA" ;
-  rdfs:label "amstelstraat1" ;
-  skos:prefLabel "amstelstraat1" ;
-.
-:amstelstraat15
-  a geo:address ;
-  geo:building_id "15" ;
-  geo:locatedIn_street :Amstelstraat ;
-  geo:postal_code "1111AA" ;
-  rdfs:label "amstelstraat15" ;
-  skos:prefLabel "amstelstraat15" ;
-.
-:breeder
-  a le:party_type ;
-  le:type_comment "A legal entity; to which we deliver the product on behalf of our partners." ;
-  le:type_label "breeder" ;
-  rdfs:label "breeder" ;
-  skos:prefLabel "breeder" ;
-.
-:city
-  a owl:Class ;
-  rdfs:label "city" ;
-  rdfs:subClassOf geo:geospatial_feature ;
-  skos:prefLabel "city" ;
-.
-:country
-  a owl:Class ;
-  rdfs:label "country" ;
-  rdfs:subClassOf geo:geospatial_feature ;
-  skos:prefLabel "country" ;
+<http://thehappydog.io/#ast/type_name>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain <http://thehappydog.io/#ast/truck_type> ;
+  rdfs:label "type name" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "type name" ;
 .
 :domainKeyPredicate
-  a owl:ObjectProperty ;
+  rdf:type owl:ObjectProperty ;
   rdfs:comment "Links the key to the predicate in which the value of the key is stored. This predicate has the entity being identified as its domain" ;
   rdfs:domain :NaturalKey ;
   rdfs:label "Domain Key Predicate" ;
   rdfs:range rdf:Property ;
 .
-:goudseweg12
-  a geo:address ;
-  geo:building_id "12" ;
-  geo:locatedIn_street :Goudseweg ;
-  geo:postal_code "3243AA" ;
-  rdfs:label "goudseweg12" ;
-  skos:prefLabel "goudseweg12" ;
+<http://thehappydog.io/#geo/address>
+  rdf:type owl:Class ;
+  :hasNaturalKey <http://thehappydog.io/NaturalKey_2> ;
+  rdfs:label "The point on the map" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "Address" ;
+.
+<http://thehappydog.io/#geo/building_id>
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain <http://thehappydog.io/#geo/address> ;
+  rdfs:label "building id" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "building id" ;
+.
+<http://thehappydog.io/#geo/city>
+  rdf:type owl:Class ;
+  :hasNaturalKey <http://thehappydog.io/NaturalKey_3> ;
+  rdfs:label "city" ;
+  rdfs:subClassOf <http://thehappydog.io/#geo/geospatial_feature> ;
+  skos:prefLabel "city" ;
+.
+<http://thehappydog.io/#geo/country>
+  rdf:type owl:Class ;
+  :hasNaturalKey <http://thehappydog.io/NaturalKey_7> ;
+  rdfs:label "country" ;
+  rdfs:subClassOf <http://thehappydog.io/#geo/geospatial_feature> ;
+  skos:prefLabel "country" ;
+.
+<http://thehappydog.io/#geo/geospatial_feature>
+  rdf:type owl:Class ;
+  :hasNaturalKey <http://thehappydog.io/NaturalKey_3> ;
+  rdfs:label "A polygon on the map" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "geospatial feature" ;
+.
+<http://thehappydog.io/#geo/has_allowed_truck_type>
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain <http://thehappydog.io/#geo/address> ;
+  rdfs:label "has allowed truck type" ;
+  rdfs:range <http://thehappydog.io/#ast/truck_type> ;
+  skos:prefLabel "has allowed truck type" ;
+.
+<http://thehappydog.io/#geo/locatedIn>
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain <http://thehappydog.io/#geo/geospatial_feature> ;
+  rdfs:label "located in" ;
+  rdfs:range <http://thehappydog.io/#geo/geospatial_feature> ;
+  skos:prefLabel "located in" ;
+.
+<http://thehappydog.io/#geo/locatedIn_street>
+  rdf:type owl:FunctionalProperty ;
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain <http://thehappydog.io/#geo/address> ;
+  rdfs:label "located in street" ;
+  rdfs:range <http://thehappydog.io/#geo/street> ;
+  skos:prefLabel "located in street" ;
+.
+<http://thehappydog.io/#geo/name>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain <http://thehappydog.io/#geo/geospatial_feature> ;
+  rdfs:label "name of the geospatial feature" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "name" ;
+.
+<http://thehappydog.io/#geo/postal_code>
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain <http://thehappydog.io/#geo/address> ;
+  rdfs:label "postal code" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "postal code" ;
+.
+<http://thehappydog.io/#geo/street>
+  rdf:type owl:Class ;
+  rdfs:label "street" ;
+  rdfs:subClassOf <http://thehappydog.io/#geo/geospatial_feature> ;
+  skos:prefLabel "street" ;
 .
 :hasNaturalKey
-  a owl:ObjectProperty ;
+  rdf:type owl:AnnotationProperty ;
   rdfs:comment "Links the class to its natural keys" ;
   rdfs:domain owl:Class ;
   rdfs:label "Has Natural Key" ;
   rdfs:range :NaturalKey ;
 .
-:hondlaan14
-  a geo:address ;
-  geo:building_id "14" ;
-  geo:locatedIn_street :Hondlaan ;
-  geo:postal_code "2232PP" ;
-  rdfs:label "hondlaan14" ;
-  skos:prefLabel "hondlaan14" ;
+<http://thehappydog.io/#le/has_contact_address>
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain <http://thehappydog.io/#le/legal_entity> ;
+  rdfs:label "has_contact_address" ;
+  rdfs:range <http://thehappydog.io/#geo/address> ;
+  skos:prefLabel "has_contact_address" ;
 .
-:koningsweg44
-  a geo:address ;
-  geo:building_id "44" ;
-  geo:locatedIn_street :Koningsweg ;
-  geo:postal_code "3456CC" ;
-  rdfs:label "koningsweg44" ;
-  skos:prefLabel "koningsweg44" ;
+<http://thehappydog.io/#le/has_delivery_address>
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain <http://thehappydog.io/#le/legal_entity> ;
+  rdfs:label "has_delivery_address" ;
+  rdfs:range <http://thehappydog.io/#geo/address> ;
+  skos:prefLabel "has_delivery_address" ;
 .
-:massive
-  a ast:truck_type ;
-  ast:type_name "regular" ;
-  rdfs:label "massive" ;
-  skos:prefLabel "massive" ;
+<http://thehappydog.io/#le/has_party_type>
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain <http://thehappydog.io/#le/legal_entity> ;
+  rdfs:label "has party type" ;
+  rdfs:range <http://thehappydog.io/#le/party_type> ;
+  skos:prefLabel "has party type" ;
 .
-:producer
-  a le:party_type ;
-  le:type_comment "A legal entity that produces dog food; our clients that use our services to deliver their product to the end user. Only trade their own brand." ;
-  le:type_label "producer" ;
-  rdfs:label "producer" ;
-  skos:prefLabel "producer" ;
+<http://thehappydog.io/#le/legal_entity>
+  rdf:type owl:Class ;
+  :hasNaturalKey <http://thehappydog.io/NaturalKey_4> ;
+  rdfs:label "an entity registered in chamber of commerce" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "legal entity" ;
+.
+<http://thehappydog.io/#le/legal_entity/sdfsdf>
+  rdf:type <http://thehappydog.io/#le/legal_entity> ;
+.
+<http://thehappydog.io/#le/name>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain <http://thehappydog.io/#le/legal_entity> ;
+  rdfs:label "name" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "name" ;
+.
+<http://thehappydog.io/#le/owner_of>
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain <http://thehappydog.io/#le/legal_entity> ;
+  rdfs:range <http://thehappydog.io/#own/ownership> ;
+.
+<http://thehappydog.io/#le/owns>
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain <http://thehappydog.io/#le/legal_entity> ;
+  rdfs:label "owns" ;
+  rdfs:range <http://thehappydog.io/#loc/warehouse> ;
+  skos:prefLabel "owns" ;
+.
+<http://thehappydog.io/#le/party_type>
+  rdf:type owl:Class ;
+  :hasNaturalKey <http://thehappydog.io/NaturalKey_5> ;
+  rdfs:label "the role the party plays in the supply chain" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "party type" ;
+.
+<http://thehappydog.io/#le/registered_name>
+  rdf:type owl:DatatypeProperty ;
+  rdf:type owl:FunctionalProperty ;
+  rdfs:domain <http://thehappydog.io/#le/legal_entity> ;
+  rdfs:range xsd:string ;
+.
+<http://thehappydog.io/#le/rents>
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain <http://thehappydog.io/#le/legal_entity> ;
+  rdfs:label "rents" ;
+  rdfs:range <http://thehappydog.io/#loc/warehouse> ;
+  skos:prefLabel "rents" ;
+.
+<http://thehappydog.io/#loc/has_ownership>
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain <http://thehappydog.io/#loc/warehouse> ;
+  rdfs:range <http://thehappydog.io/#own/ownership> ;
+.
+<http://thehappydog.io/#loc/located_on>
+  rdf:type owl:ObjectProperty ;
+  rdfs:domain <http://thehappydog.io/#loc/warehouse> ;
+  rdfs:label "the address the warehouse is located on" ;
+  rdfs:range <http://thehappydog.io/#geo/address> ;
+  skos:prefLabel "located on" ;
+.
+<http://thehappydog.io/#loc/name>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain <http://thehappydog.io/#loc/warehouse> ;
+  rdfs:label "name of the location" ;
+  rdfs:range xsd:string ;
+  skos:prefLabel "name" ;
+.
+<http://thehappydog.io/#loc/warehouse>
+  rdf:type owl:Class ;
+  :hasNaturalKey <http://thehappydog.io/NaturalKey_1> ;
+  rdfs:label "Location where we pick up the product" ;
+  rdfs:subClassOf owl:Thing ;
+  skos:prefLabel "Warehouse" ;
+.
+<http://thehappydog.io/#own/has_percentage>
+  rdf:type owl:DatatypeProperty ;
+  rdfs:domain <http://thehappydog.io/#own/ownership> ;
+  rdfs:range xsd:integer ;
+.
+<http://thehappydog.io/#own/ownership>
+  rdf:type owl:Class ;
+  rdfs:subClassOf owl:Thing ;
 .
 :rangeKeyPredicate
-  a owl:ObjectProperty ;
+  rdf:type owl:ObjectProperty ;
   rdfs:comment "Links the key to the predicate in which the value of the key is stored. This predicate has the entity being identified as its range" ;
   rdfs:domain :NaturalKey ;
   rdfs:label "Range Key Predicate" ;
   rdfs:range rdf:Property ;
 .
-:regular
-  a ast:truck_type ;
-  ast:type_name "regular" ;
+<http://thehappydog.io/Almere>
+  rdf:type <http://thehappydog.io/#geo/city> ;
+  <http://thehappydog.io/#geo/locatedIn> <http://thehappydog.io/Netherlands> ;
+  <http://thehappydog.io/#geo/name> "Almere" ;
+  rdfs:label "Almere" ;
+  skos:prefLabel "Almere" ;
+.
+<http://thehappydog.io/Amstel>
+  rdf:type <http://thehappydog.io/#loc/warehouse> ;
+  <http://thehappydog.io/#loc/has_ownership> <http://thehappydog.io/ownership_A_of_X> ;
+  <http://thehappydog.io/#loc/has_ownership> <http://thehappydog.io/ownership_B_of_X> ;
+  <http://thehappydog.io/#loc/located_on> <http://thehappydog.io/amstelstraat1> ;
+  <http://thehappydog.io/#loc/name> "Amstel" ;
+  rdfs:label "Amstel" ;
+  skos:prefLabel "Amstel" ;
+.
+<http://thehappydog.io/Amstelplein>
+  rdf:type <http://thehappydog.io/#geo/street> ;
+  <http://thehappydog.io/#geo/locatedIn> <http://thehappydog.io/Amsterdam> ;
+  <http://thehappydog.io/#geo/name> "Amstelplein" ;
+  rdfs:label "Amstelplein" ;
+  skos:prefLabel "Amstelplein" ;
+.
+<http://thehappydog.io/Amstelstraat>
+  rdf:type <http://thehappydog.io/#geo/street> ;
+  <http://thehappydog.io/#geo/locatedIn> <http://thehappydog.io/Amsterdam> ;
+  <http://thehappydog.io/#geo/name> "amstelstraat" ;
+  rdfs:label "Amstelstraat" ;
+  skos:prefLabel "Amstelstraat" ;
+.
+<http://thehappydog.io/Amsterdam>
+  rdf:type <http://thehappydog.io/#geo/city> ;
+  <http://thehappydog.io/#geo/locatedIn> <http://thehappydog.io/Netherlands> ;
+  <http://thehappydog.io/#geo/name> "amsterdam" ;
+  rdfs:label "Amsterdam" ;
+  skos:prefLabel "Amsterdam" ;
+.
+<http://thehappydog.io/DogFoodsInc>
+  rdf:type <http://thehappydog.io/#le/legal_entity> ;
+  <http://thehappydog.io/#le/has_contact_address> <http://thehappydog.io/goudseweg12> ;
+  <http://thehappydog.io/#le/has_delivery_address> <http://thehappydog.io/vondelingsweg15> ;
+  <http://thehappydog.io/#le/has_party_type> <http://thehappydog.io/wholesaler> ;
+  <http://thehappydog.io/#le/name> "DogFoods Inc" ;
+  <http://thehappydog.io/#le/owner_of> <http://thehappydog.io/ownership_A_of_X> ;
+  <http://thehappydog.io/#le/rents> <http://thehappydog.io/Europoort> ;
+  <http://thehappydog.io/#le/rents> <http://thehappydog.io/Purina_Amsterdam> ;
+  rdfs:label "Dog foods inc" ;
+  skos:prefLabel "Dog foods inc" ;
+.
+<http://thehappydog.io/Europoort>
+  rdf:type <http://thehappydog.io/#loc/warehouse> ;
+  <http://thehappydog.io/#loc/located_on> <http://thehappydog.io/vondelingsweg13> ;
+  <http://thehappydog.io/#loc/name> "Europoort" ;
+  rdfs:label "Europoort" ;
+  skos:prefLabel "Europoort" ;
+.
+<http://thehappydog.io/FluffyCloud>
+  rdf:type <http://thehappydog.io/#le/legal_entity> ;
+  <http://thehappydog.io/#le/has_contact_address> <http://thehappydog.io/amstelplein1> ;
+  <http://thehappydog.io/#le/has_delivery_address> <http://thehappydog.io/amstelstraat15> ;
+  <http://thehappydog.io/#le/has_party_type> <http://thehappydog.io/breeder> ;
+  <http://thehappydog.io/#le/name> "FluffyCloud" ;
+  <http://thehappydog.io/#le/owner_of> <http://thehappydog.io/ownership_B_of_X> ;
+  rdfs:label "Fluffy cloud" ;
+  skos:prefLabel "Fluffy cloud" ;
+.
+<http://thehappydog.io/Gouda>
+  rdf:type <http://thehappydog.io/#geo/city> ;
+  <http://thehappydog.io/#geo/locatedIn> <http://thehappydog.io/Netherlands> ;
+  <http://thehappydog.io/#geo/name> "Gouda" ;
+  rdfs:label "Gouda" ;
+  skos:prefLabel "Gouda" ;
+.
+<http://thehappydog.io/Goudseweg>
+  rdf:type <http://thehappydog.io/#geo/street> ;
+  <http://thehappydog.io/#geo/locatedIn> <http://thehappydog.io/Gouda> ;
+  <http://thehappydog.io/#geo/name> "goudseweg" ;
+  rdfs:label "Goudseweg" ;
+  skos:prefLabel "Goudseweg" ;
+.
+<http://thehappydog.io/Hondlaan>
+  rdf:type <http://thehappydog.io/#geo/street> ;
+  <http://thehappydog.io/#geo/locatedIn> <http://thehappydog.io/Almere> ;
+  <http://thehappydog.io/#geo/name> "Hondlaan" ;
+  rdfs:label "Hondlaan" ;
+  skos:prefLabel "Hondlaan" ;
+.
+<http://thehappydog.io/Koningsweg>
+  rdf:type <http://thehappydog.io/#geo/street> ;
+  <http://thehappydog.io/#geo/locatedIn> <http://thehappydog.io/Woerden> ;
+  <http://thehappydog.io/#geo/name> "Koningsweg" ;
+  rdfs:label "Koningsweg" ;
+  skos:prefLabel "Koningsweg" ;
+.
+<http://thehappydog.io/NaturalKey_1>
+  rdf:type :NaturalKey ;
+  :domainKeyPredicate <http://thehappydog.io/#loc/located_on> ;
+.
+<http://thehappydog.io/NaturalKey_2>
+  rdf:type :NaturalKey ;
+  :domainKeyPredicate <http://thehappydog.io/#geo/building_id> ;
+  :domainKeyPredicate <http://thehappydog.io/#geo/postal_code> ;
+.
+<http://thehappydog.io/NaturalKey_3>
+  rdf:type :NaturalKey ;
+  :domainKeyPredicate <http://thehappydog.io/#geo/locatedIn> ;
+  :domainKeyPredicate <http://thehappydog.io/#geo/name> ;
+.
+<http://thehappydog.io/NaturalKey_4>
+  rdf:type :NaturalKey ;
+  :domainKeyPredicate <http://thehappydog.io/#le/name> ;
+.
+<http://thehappydog.io/NaturalKey_5>
+  rdf:type :NaturalKey ;
+  :domainKeyPredicate <http://example.org/thehappydog/le#type_label> ;
+.
+<http://thehappydog.io/NaturalKey_6>
+  rdf:type :NaturalKey ;
+  :domainKeyPredicate <http://thehappydog.io/#geo/locatedIn> ;
+  :domainKeyPredicate <http://thehappydog.io/#geo/name> ;
+.
+<http://thehappydog.io/NaturalKey_7>
+  rdf:type :NaturalKey ;
+  :domainKeyPredicate <http://thehappydog.io/#geo/name> ;
+.
+<http://thehappydog.io/Netherlands>
+  rdf:type <http://thehappydog.io/#geo/country> ;
+  <http://thehappydog.io/#geo/name> "the_netherlands" ;
+  rdfs:label "Netherlands" ;
+  skos:prefLabel "Netherlands" ;
+.
+<http://thehappydog.io/Purina>
+  rdf:type <http://thehappydog.io/#le/legal_entity> ;
+  <http://thehappydog.io/#le/has_contact_address> <http://thehappydog.io/wilhelminalaan13> ;
+  <http://thehappydog.io/#le/has_delivery_address> <http://thehappydog.io/amstelstraat15> ;
+  <http://thehappydog.io/#le/has_party_type> <http://thehappydog.io/producer> ;
+  <http://thehappydog.io/#le/has_party_type> <http://thehappydog.io/wholesaler> ;
+  <http://thehappydog.io/#le/name> "Purina" ;
+  <http://thehappydog.io/#le/owns> <http://thehappydog.io/Amstel> ;
+  rdfs:label "Purina" ;
+  skos:prefLabel "Purina" ;
+.
+<http://thehappydog.io/Purina_Amsterdam>
+  rdf:type <http://thehappydog.io/#loc/warehouse> ;
+  <http://thehappydog.io/#loc/located_on> <http://thehappydog.io/amstelstraat1> ;
+  <http://thehappydog.io/#loc/name> "Purina_Amsterdam" ;
+  rdfs:label "Purina Amsterdam" ;
+  skos:prefLabel "Purina Amsterdam" ;
+.
+<http://thehappydog.io/Rotterdam>
+  rdf:type <http://thehappydog.io/#geo/city> ;
+  <http://thehappydog.io/#geo/locatedIn> <http://thehappydog.io/Netherlands> ;
+  <http://thehappydog.io/#geo/name> "rotterdam" ;
+  rdfs:label "Rotterdam" ;
+  skos:prefLabel "Rotterdam" ;
+.
+<http://thehappydog.io/SetterGetter>
+  rdf:type <http://thehappydog.io/#le/legal_entity> ;
+  <http://thehappydog.io/#le/has_contact_address> <http://thehappydog.io/koningsweg44> ;
+  <http://thehappydog.io/#le/has_delivery_address> <http://thehappydog.io/hondlaan14> ;
+  <http://thehappydog.io/#le/has_party_type> <http://thehappydog.io/breeder> ;
+  <http://thehappydog.io/#le/name> "SetterGetter" ;
+  rdfs:label "Setter getter" ;
+  skos:prefLabel "Setter getter" ;
+.
+<http://thehappydog.io/Vondelingsweg>
+  rdf:type <http://thehappydog.io/#geo/street> ;
+  <http://thehappydog.io/#geo/locatedIn> <http://thehappydog.io/Rotterdam> ;
+  <http://thehappydog.io/#geo/name> "vondelingsweg" ;
+  rdfs:label "Vondelingsweg" ;
+  skos:prefLabel "Vondelingsweg" ;
+.
+<http://thehappydog.io/Wilhelminalaan>
+  rdf:type <http://thehappydog.io/#geo/street> ;
+  <http://thehappydog.io/#geo/locatedIn> <http://thehappydog.io/Rotterdam> ;
+  <http://thehappydog.io/#geo/name> "wilhelminalaan" ;
+  rdfs:label "Wilhelminalaan" ;
+  skos:prefLabel "Wilhelminalaan" ;
+.
+<http://thehappydog.io/Woerden>
+  rdf:type <http://thehappydog.io/#geo/city> ;
+  <http://thehappydog.io/#geo/locatedIn> <http://thehappydog.io/Netherlands> ;
+  <http://thehappydog.io/#geo/name> "Woerden" ;
+  rdfs:label "Woerden" ;
+  skos:prefLabel "Woerden" ;
+.
+<http://thehappydog.io/amstelplein1>
+  rdf:type <http://thehappydog.io/#geo/address> ;
+  <http://thehappydog.io/#geo/building_id> "1" ;
+  <http://thehappydog.io/#geo/locatedIn_street> <http://thehappydog.io/Amstelplein> ;
+  <http://thehappydog.io/#geo/postal_code> "1232AK" ;
+  rdfs:label "amstelplein1" ;
+  skos:prefLabel "amstelplein1" ;
+.
+<http://thehappydog.io/amstelstraat1>
+  rdf:type <http://thehappydog.io/#geo/address> ;
+  <http://thehappydog.io/#geo/building_id> "1" ;
+  <http://thehappydog.io/#geo/has_allowed_truck_type> <http://thehappydog.io/massive> ;
+  <http://thehappydog.io/#geo/has_allowed_truck_type> <http://thehappydog.io/regular> ;
+  <http://thehappydog.io/#geo/locatedIn_street> <http://thehappydog.io/Amstelstraat> ;
+  <http://thehappydog.io/#geo/postal_code> "1111AA" ;
+  rdfs:label "amstelstraat1" ;
+  skos:prefLabel "amstelstraat1" ;
+.
+<http://thehappydog.io/amstelstraat15>
+  rdf:type <http://thehappydog.io/#geo/address> ;
+  <http://thehappydog.io/#geo/building_id> "15" ;
+  <http://thehappydog.io/#geo/locatedIn_street> <http://thehappydog.io/Amstelstraat> ;
+  <http://thehappydog.io/#geo/postal_code> "1111AA" ;
+  rdfs:label "amstelstraat15" ;
+  skos:prefLabel "amstelstraat15" ;
+.
+<http://thehappydog.io/breeder>
+  rdf:type <http://thehappydog.io/#le/party_type> ;
+  <http://example.org/thehappydog/le#type_comment> "A legal entity; to which we deliver the product on behalf of our partners." ;
+  <http://example.org/thehappydog/le#type_label> "breeder" ;
+  rdfs:label "breeder" ;
+  skos:prefLabel "breeder" ;
+.
+<http://thehappydog.io/goudseweg12>
+  rdf:type <http://thehappydog.io/#geo/address> ;
+  <http://thehappydog.io/#geo/building_id> "12" ;
+  <http://thehappydog.io/#geo/locatedIn_street> <http://thehappydog.io/Goudseweg> ;
+  <http://thehappydog.io/#geo/postal_code> "3243AA" ;
+  rdfs:label "goudseweg12" ;
+  skos:prefLabel "goudseweg12" ;
+.
+<http://thehappydog.io/hondlaan14>
+  rdf:type <http://thehappydog.io/#geo/address> ;
+  <http://thehappydog.io/#geo/building_id> "14" ;
+  <http://thehappydog.io/#geo/locatedIn_street> <http://thehappydog.io/Hondlaan> ;
+  <http://thehappydog.io/#geo/postal_code> "2232PP" ;
+  rdfs:label "hondlaan14" ;
+  skos:prefLabel "hondlaan14" ;
+.
+<http://thehappydog.io/koningsweg44>
+  rdf:type <http://thehappydog.io/#geo/address> ;
+  <http://thehappydog.io/#geo/building_id> "44" ;
+  <http://thehappydog.io/#geo/locatedIn_street> <http://thehappydog.io/Koningsweg> ;
+  <http://thehappydog.io/#geo/postal_code> "3456CC" ;
+  rdfs:label "koningsweg44" ;
+  skos:prefLabel "koningsweg44" ;
+.
+<http://thehappydog.io/massive>
+  rdf:type <http://thehappydog.io/#ast/truck_type> ;
+  <http://thehappydog.io/#ast/type_name> "regular" ;
+  rdfs:label "massive" ;
+  skos:prefLabel "massive" ;
+.
+<http://thehappydog.io/ownership_A_of_X>
+  rdf:type <http://thehappydog.io/#own/ownership> ;
+  <http://thehappydog.io/#own/has_percentage> 40 ;
+.
+<http://thehappydog.io/ownership_B_of_X>
+  rdf:type <http://thehappydog.io/#own/ownership> ;
+  <http://thehappydog.io/#own/has_percentage> 60 ;
+.
+<http://thehappydog.io/producer>
+  rdf:type <http://thehappydog.io/#le/party_type> ;
+  <http://example.org/thehappydog/le#type_comment> "A legal entity that produces dog food; our clients that use our services to deliver their product to the end user. Only trade their own brand." ;
+  <http://example.org/thehappydog/le#type_label> "producer" ;
+  rdfs:label "producer" ;
+  skos:prefLabel "producer" ;
+.
+<http://thehappydog.io/regular>
+  rdf:type <http://thehappydog.io/#ast/truck_type> ;
+  <http://thehappydog.io/#ast/type_name> "regular" ;
   rdfs:label "regular" ;
   skos:prefLabel "regular" ;
 .
-:street
-  a owl:Class ;
-  rdfs:label "street" ;
-  rdfs:subClassOf geo:geospatial_feature ;
-  skos:prefLabel "street" ;
-.
-:vondelingsweg13
-  a geo:address ;
-  geo:building_id "13" ;
-  geo:has_allowed_truck_type :massive ;
-  geo:has_allowed_truck_type :regular ;
-  geo:locatedIn_street :Vondelingsweg ;
-  geo:postal_code "1234AB" ;
+<http://thehappydog.io/vondelingsweg13>
+  rdf:type <http://thehappydog.io/#geo/address> ;
+  <http://thehappydog.io/#geo/building_id> "13" ;
+  <http://thehappydog.io/#geo/has_allowed_truck_type> <http://thehappydog.io/massive> ;
+  <http://thehappydog.io/#geo/has_allowed_truck_type> <http://thehappydog.io/regular> ;
+  <http://thehappydog.io/#geo/locatedIn_street> <http://thehappydog.io/Vondelingsweg> ;
+  <http://thehappydog.io/#geo/postal_code> "1234AB" ;
   rdfs:label "vondelingsweg13" ;
   skos:prefLabel "vondelingsweg13" ;
 .
-:vondelingsweg15
-  a geo:address ;
-  geo:building_id "15" ;
-  geo:locatedIn_street :Vondelingsweg ;
-  geo:postal_code "1234AB" ;
+<http://thehappydog.io/vondelingsweg15>
+  rdf:type <http://thehappydog.io/#geo/address> ;
+  <http://thehappydog.io/#geo/building_id> "15" ;
+  <http://thehappydog.io/#geo/locatedIn_street> <http://thehappydog.io/Vondelingsweg> ;
+  <http://thehappydog.io/#geo/postal_code> "1234AB" ;
   rdfs:label "vondelingsweg15" ;
   skos:prefLabel "vondelingsweg15" ;
 .
-:wholesaler
-  a le:party_type ;
-  le:type_comment "A legal entity; our clients that use our services to deliver their product to the end user. Sell multiple brands." ;
-  le:type_label "wholesaler" ;
+<http://thehappydog.io/wholesaler>
+  rdf:type <http://thehappydog.io/#le/party_type> ;
+  <http://example.org/thehappydog/le#type_comment> "A legal entity; our clients that use our services to deliver their product to the end user. Sell multiple brands." ;
+  <http://example.org/thehappydog/le#type_label> "wholesaler" ;
   rdfs:label "wholesaler" ;
   skos:prefLabel "wholesaler" ;
 .
-:wilhelminalaan13
-  a geo:address ;
-  geo:building_id "13" ;
-  geo:locatedIn_street :Wilhelminalaan ;
-  geo:postal_code "4444BB" ;
+<http://thehappydog.io/wilhelminalaan13>
+  rdf:type <http://thehappydog.io/#geo/address> ;
+  <http://thehappydog.io/#geo/building_id> "13" ;
+  <http://thehappydog.io/#geo/locatedIn_street> <http://thehappydog.io/Wilhelminalaan> ;
+  <http://thehappydog.io/#geo/postal_code> "4444BB" ;
   rdfs:label "wilhelminalaan13" ;
   skos:prefLabel "wilhelminalaan13" ;
-.
-ast:truck_type
-  a owl:Class ;
-  rdfs:label "truck type" ;
-  rdfs:subClassOf owl:Thing ;
-  skos:prefLabel "truck type" ;
-.
-ast:type_name
-  a owl:DatatypeProperty ;
-  rdfs:domain ast:truck_type ;
-  rdfs:label "type name" ;
-  rdfs:range xsd:string ;
-  skos:prefLabel "type name" ;
-.
-geo:address
-  a owl:Class ;
-  :hasNaturalKey :NaturalKey_2 ;
-  rdfs:label "The point on the map" ;
-  rdfs:subClassOf owl:Thing ;
-  skos:prefLabel "Address" ;
-.
-geo:building_id
-  a owl:DatatypeProperty ;
-  a owl:FunctionalProperty ;
-  rdfs:domain geo:address ;
-  rdfs:label "building id" ;
-  rdfs:range xsd:string ;
-  skos:prefLabel "building id" ;
-.
-geo:geospatial_feature
-  a owl:Class ;
-  :hasNaturalKey :NaturalKey_3 ;
-  rdfs:label "A polygon on the map" ;
-  rdfs:subClassOf owl:Thing ;
-  skos:prefLabel "geospatial feature" ;
-.
-geo:has_allowed_truck_type
-  a owl:ObjectProperty ;
-  rdfs:domain geo:address ;
-  rdfs:label "has allowed truck type" ;
-  rdfs:range ast:truck_type ;
-  skos:prefLabel "has allowed truck type" ;
-.
-geo:locatedIn
-  a owl:ObjectProperty ;
-  rdfs:domain geo:geospatial_feature ;
-  rdfs:label "located in" ;
-  rdfs:range geo:geospatial_feature ;
-  skos:prefLabel "located in" ;
-.
-geo:locatedIn_street
-  a owl:ObjectProperty ;
-  rdfs:domain geo:address ;
-  rdfs:label "located in street" ;
-  rdfs:range :street ;
-  skos:prefLabel "located in street" ;
-.
-geo:name
-  a owl:DatatypeProperty ;
-  rdfs:domain geo:geospatial_feature ;
-  rdfs:label "name of the geospatial feature" ;
-  rdfs:range xsd:string ;
-  skos:prefLabel "name" ;
-.
-geo:postal_code
-  a owl:DatatypeProperty ;
-  a owl:FunctionalProperty ;
-  rdfs:domain geo:address ;
-  rdfs:label "postal code" ;
-  rdfs:range xsd:string ;
-  skos:prefLabel "postal code" ;
-.
-le:has_contact_address
-  a owl:ObjectProperty ;
-  rdfs:domain le:legal_entity ;
-  rdfs:label "has_contact_address" ;
-  rdfs:range geo:address ;
-  skos:prefLabel "has_contact_address" ;
-.
-le:has_delivery_address
-  a owl:ObjectProperty ;
-  rdfs:domain le:legal_entity ;
-  rdfs:label "has_delivery_address" ;
-  rdfs:range geo:address ;
-  skos:prefLabel "has_delivery_address" ;
-.
-le:has_party_type
-  a owl:ObjectProperty ;
-  rdfs:domain le:legal_entity ;
-  rdfs:label "has party type" ;
-  rdfs:range le:party_type ;
-  skos:prefLabel "has party type" ;
-.
-le:legal_entity
-  a owl:Class ;
-  :hasNaturalKey :NaturalKey_4 ;
-  rdfs:label "an entity registered in chamber of commerce" ;
-  rdfs:subClassOf owl:Thing ;
-  skos:prefLabel "legal entity" ;
-.
-le:name
-  a owl:DatatypeProperty ;
-  a owl:FunctionalProperty ;
-  rdfs:domain le:legal_entity ;
-  rdfs:label "name" ;
-  rdfs:range xsd:string ;
-  skos:prefLabel "name" ;
-.
-le:owns
-  a owl:ObjectProperty ;
-  rdfs:domain le:legal_entity ;
-  rdfs:label "owns" ;
-  rdfs:range loc:warehouse ;
-  skos:prefLabel "owns" ;
-.
-le:party_type
-  a owl:Class ;
-  :hasNaturalKey :NaturalKey_5 ;
-  rdfs:label "the role the party plays in the supply chain" ;
-  rdfs:subClassOf owl:Thing ;
-  skos:prefLabel "party type" ;
-.
-le:rents
-  a owl:ObjectProperty ;
-  rdfs:domain le:legal_entity ;
-  rdfs:label "rents" ;
-  rdfs:range loc:warehouse ;
-  skos:prefLabel "rents" ;
-.
-le:type_comment
-  a owl:DatatypeProperty ;
-  rdfs:domain le:party_type ;
-  rdfs:label "type comment" ;
-  rdfs:range xsd:string ;
-  skos:prefLabel "type comment" ;
-.
-le:type_label
-  a owl:DatatypeProperty ;
-  rdfs:domain le:party_type ;
-  rdfs:label "type label" ;
-  rdfs:range xsd:string ;
-  skos:prefLabel "type label" ;
-.
-loc:located_on
-  a owl:FunctionalProperty ;
-  a owl:ObjectProperty ;
-  rdfs:domain loc:warehouse ;
-  rdfs:label "the address the warehouse is located on" ;
-  rdfs:range geo:address ;
-  skos:prefLabel "located on" ;
-.
-loc:name
-  a owl:DatatypeProperty ;
-  rdfs:domain loc:warehouse ;
-  rdfs:label "name of the location" ;
-  rdfs:range xsd:string ;
-  skos:prefLabel "name" ;
-.
-loc:warehouse
-  a owl:Class ;
-  :hasNaturalKey :NaturalKey_1 ;
-  rdfs:label "Location where we pick up the product" ;
-  rdfs:subClassOf owl:Thing ;
-  skos:prefLabel "Warehouse" ;
 .
